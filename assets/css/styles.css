@@ -1,0 +1,46 @@
+body {
+    margin: 0; /* Remove default body margin */
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    position: sticky;
+    top: 0; 
+    z-index: 100; 
+    overflow: hidden;
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav img {
+    padding: 10px;
+    padding-left: 20px;
+}
+
+nav .nav-links {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav a {
+    color: wheat;
+    font-size: 18px;
+    display: flex; /* make anchor tags flex items */
+    align-items: center; /* Vertically center content */
+    flex-grow: 1;
+    padding: 0 20px;
+    height: 100%;
+    text-decoration:none;
+}
+
+nav a:hover {
+    color: white;
+    font-size: 20px;
+    background-color: #222222;
+}
