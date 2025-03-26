@@ -19,25 +19,83 @@
             <a href="contactos.html">Contatos</a>
         </div>
     </nav>
-    <h1>produtos</h1>
-    <div style="width: 100px; justify-content: center;">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo excepturi vitae ea tempora libero, error adipisci
-        facilis maiores nostrum delectus officiis reiciendis voluptate. Enim eius repellendus maxime odio? Voluptas,
-        sequi! <br><br><br>
-        Illo modi consequuntur optio officiis at, ipsa numquam deleniti quod cumque laboriosam minima earum beatae
-        ducimus dolorem dicta minus culpa. Sequi asperiores officiis maiores fugiat perspiciatis quo, aspernatur quod
-        molestias! <br><br><br>
-        Id hic quo atque quae expedita corporis, qui impedit possimus molestias ipsam harum? Alias, tempora doloremque
-        unde voluptatum, praesentium soluta hic ipsam totam facere ea magni id error dolorum quas.
-        <br><br><br>Repellat fugit doloremque, obcaecati optio nostrum, reprehenderit modi molestiae ducimus veritatis, sequi
-        nesciunt odit consequatur quo minus blanditiis eligendi quod voluptatum iusto repellendus reiciendis ea quaerat.
-        Molestiae sit minima voluptatibus!
-        Modi a deleniti tempora. Asperiores, placeat sint voluptas ipsum enim totam dolores. Cumque aliquam possimus rem
-        enim saepe accusantium earum fugit, dolores nihil numquam totam aut itaque error autem! Assumenda!
+    <h1>Os nossos productos:</h1>
+    <div style="justify-content: center;">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
 
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque ea unde dicta similique officiis quo quam ex?
-        Quasi tempora voluptate incidunt blanditiis rerum inventore culpa molestiae voluptates illo aliquam! Nostrum?
+            <!-- Full-width images with number and caption text -->
+            <div class="slides fade">
+                <img src="assets/img/slideshow/vin-04-01.jpg" style="width:100%; object-fit: contain; height: 500px;width: 500px;">
+                <div class="text">Vinificação</div>
+            </div>
+            <div class="slides fade">
+                <img src="assets/img/slideshow/filt-01-02.jpg" style="width:100%; object-fit: contain; height: 500px;width: 500px;">
+                <div class="text">Filtração</div>
+            </div>
+            <div class="slides fade">
+                <img src="assets/img/slideshow/estab-01-02.jpg" style="width:100%; object-fit: contain; height: 500px;width: 500px;">
+                <div class="text">Estabilização Tartática</div>
+            </div>
+            <div class="slides fade">
+                <img src="assets/img/slideshow/carb-01-04.jpg" style="width:100%; object-fit: contain; height: 500px;width: 500px;">
+                <div class="text">Carbonatação</div>
+            </div>
+            <div class="slides fade">
+                <img src="assets/img/slideshow/past-01-01.jpg" style="width:100%; object-fit: contain; height: 500px;width: 500px;">
+                <div class="text">Pasteurização</div>
+            </div>
+            <div class="slides fade">
+                <img src="assets/img/slideshow/ench-01-01.jpg" style="width:100%; object-fit: contain; height: 500px;width: 500px;">
+                <div class="text">Enchimento e Rotulagem</div>
+            </div>
+            <div class="slides fade">
+                <img src="assets/img/slideshow/cerv-01.jpg" style="width:100%; object-fit: cover; height: 500px; width: 500px;">
+                <div class="text">Cerveja e Sidra</div>
+            </div>
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>-->
     </div>
 </body>
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+} 
+</script>
 
 </html>
