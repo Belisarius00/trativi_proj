@@ -1,0 +1,175 @@
+body,
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* CAROUSEL */
+
+.bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    -webkit-filter: grayscale(100) brightness(60%);
+    filter: grayscale(100) brightness(60%);
+    height: 50%;
+    width: 100%;
+}
+.text {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5vw;
+}
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #E5E5E5;	
+    font-size: 20px;
+    line-height: 1.2em;
+    position: relative;
+    z-index: 1;
+}
+.dot {
+    color: #be1622;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 0px;
+    margin-left: 2px;
+}
+
+/* IMAGENS */ 
+
+.vinificacao .bg {
+    background-image: url("../img/slideshow/vin-04-01.jpg");
+}
+.filtracao .bg {
+    background-image: url("../img/slideshow/filt-01-02.jpg");
+}
+.estabilizacao-tartarica .bg {
+    background-image: url("../img/slideshow/estab-01-02.jpg");
+}
+.carbonatacao .bg {
+    background-image: url("../img/slideshow/carb-01-04.jpg");
+}
+.pasteurizacao .bg {
+    background-image: url("../img/slideshow/past-01-01.jpg");
+}
+.enchimento-e-rotulagem .bg {
+    background-image: url("../img/slideshow/ench-01-01.jpg");
+}
+.cerveja-e-sidra .bg {
+    background-image: url("../img/slideshow/cerv-01.jpg");
+}
+/*.processamento-de-frutas .bg {
+    background-image: url("../imgs/08.jpg");
+}*/
+.maquinas-usadas-aluguer .bg {
+    background-image: url("../imgs/01.jpg");
+}
+
+
+
+/* CAROUSEL */ 
+
+.carousel {
+    position: absolute;
+    display: block;
+}
+.slide-carousel {
+    display: flex;
+    align-items: center;
+    width: 900vw;
+    height: 100vh;
+    position: relative;
+}
+.slide-carousel:after {
+    content: "";
+    background: #262626;
+    width: 800vw;
+    height: 50vh;
+    position: absolute;
+    bottom: 0;
+}
+.slide-index {
+    transition: 2s ease;
+    margin-left: 10vw;
+    box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0.3);
+    background-color: #1a1a1a; 	
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+}
+.slide-index:first-of-type {
+    margin-left: 20vw
+}
+.slide-index a {
+    width: 60vw;
+    height: 55vh;
+    display: block;
+}
+.scale {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); 
+}
+
+/* INDICATORS */ 
+
+.indicators-wrapper {
+    position: fixed;
+    bottom: 10px;
+    display: flex!important;
+    width: 100%;
+    justify-content: center;
+    z-index: 100;
+}
+.prev, .next {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    cursor: pointer;
+}
+.prev:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #e5e5e5;
+}
+.next:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #e5e5e5;
+}
+.current-slide, .last-slide {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.line-div {
+    display: block;
+    height: 1px; 
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.13);
+    margin-top: 21px;
+}
+#number-current-slide, #last-slide {
+    font-family: 'Montserrat', sans-serif;
+    color: #E5E5E5;
+    font-size: 13px;
+}
+#last-slide {
+    opacity: 0.3;
+}
